@@ -6,6 +6,8 @@ import SpringRoll from './Images/SpringRoll.jpg';
 import Salmon from './Images/Salmon.jpg';
 import Spaghetti from './Images/Spaghetti.jpg';
 import HawaiianPizza from './Images/HawaiianPizza.jpg';
+import TenOff from './Images/TenOff.jpeg';
+import FiveOff from './Images/FiveOff.jpeg';
 import './App.css';
 import { useState,useEffect} from 'react'
 import {Route,Routes,BrowserRouter as Router} from 'react-router-dom';
@@ -21,6 +23,8 @@ export default function App() {
       ingredients: "Ginger garlic paste, Green chillies, Bell Peppers, Cheddar Cheese Carrots, Green Peas",
       image : SpringRoll,
       isAddedToCart: false,
+      discount: TenOff,
+      discountPercentage: 0.10,
     },
     {
       id: 2,
@@ -36,17 +40,19 @@ export default function App() {
       id: 3,
       quantity:1,
       name : "Vegetable Spaghetti with Bacon",
-      price : 27.00,
+      price : 27.45,
       description : "Quick and easy vegetable spaghetti that tastes so good, you won’t even realize it’s loaded with nutritious veggies",
       image: Spaghetti,
       ingredients: "Pasta,Vegetables like roasted red peppers, leafy greens, peas, corn, and cabbage.Onion, garlic, and tomato paste,tomatoes,Herbs and spices.",
       isAddedToCart: false,
+      discount: FiveOff,
+      discountPercentage: 0.05,
     },
     {
       id: 4,
       quantity: 2,
       name : "Hawaiian BBQ Chicken Pizza",
-      price : 15.00,
+      price : 15.50,
       description : "Pizza crust is layered with smokey bbq sauce, chicken pieces, creamy mozzarella, sweet pineapple, and flavorful red onion and cilantro.",
       image: HawaiianPizza,
       ingredients: "Pizza dough,Chicken breasts,Olive oil,Barbecue sauce,Bacon,Mozzarella,Fresh pineapple,Red onion,Cilantro,Garlic and Black pepper",
@@ -55,7 +61,7 @@ export default function App() {
   ];
   const [item,setItem] = useState(foodItemsArray);
   const [totalItemCount,setTotalItemCount] =useState(8);
-  const [totalAmount,setTotalAmount] = useState(222);
+  const [totalAmount,setTotalAmount] = useState(223.45);
   useEffect(() => {
 
   },[item]);
@@ -111,6 +117,8 @@ export default function App() {
                           image = {item.image}
                           ingredients = {item.ingredients}
                           itemcount = {item.quantity} 
+                          discount = {item.discount}
+                          discountPercentage = {item.discountPercentage}
                           increment = {() => incrementCount(index)}
                           decrement = {() => decrementCount(index)}
                           totalItems = {totalItemCount}
@@ -130,7 +138,9 @@ export default function App() {
                   description = {item.description}
                   image = {item.image}
                   ingredients = {item.ingredients}
-                  itemcount = {item.quantity} 
+                  itemcount = {item.quantity}
+                  discount = {item.discount} 
+                  discountPercentage = {item.discountPercentage}
                   increment = {() => incrementCount(index)}
                   decrement = {() => decrementCount(index)}
                   totalItems = {totalItemCount}

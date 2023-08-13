@@ -69,14 +69,14 @@ body{
  .FoodItem .FoodName{
   margin: 1vw 2vw;
   font-family: "Inter";
-  font-size: 1.5vw;
+  font-size: 1.75vw;
   color: blue;
  }
 
  .FoodPrice{
   margin:0vw 2vw 1vw 2vw;
   font-family: "Inter";
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   color:red;
  }
  .FoodItem .FoodDescription, .TotalCount, .FoodIngredients, .TotalAmount{
@@ -88,14 +88,14 @@ body{
    color: black;
  }
 
- .FoodItem .FoodCount{
+ .FoodItem .FoodCount, .FoodPriceInfo{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   height: 8vh;
-  padding: 1vw;
-  margin: 1vw;
+  padding: 0.2vw;
+  margin: 0vw 0vw 1vw 0vw;
   font-size: 1vw;
  }
  .FoodCount .QuantityButton{
@@ -106,7 +106,7 @@ body{
   border: none;
  }
  .FoodItem .FoodCount .CartButton{
-  margin: 1vw;
+  margin: 2vw 1vw 1vw 1vw;
   background-color: yellow;
   border-radius: 10px;
   font-size: 1vw;
@@ -127,3 +127,9 @@ body{
   font-size: 2vw;
   color:white;
  }
+
+.FoodItem .DiscountImg{
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+}

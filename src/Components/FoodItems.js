@@ -10,7 +10,10 @@ export default function FoodItems(props) {
               {props.image && <img src = {props.image} alt=""/>}
               <div className='FoodInfo'>
                 <h1 className='FoodName'>{props.name}</h1>
-                <h2 className='FoodPrice'>Price: ${props.price}</h2>
+                <div className='FoodPriceInfo'>
+                  <h2 className='FoodPrice'>Price: ${props.price}</h2>
+                  {props.discount && <img src = {props.discount} alt="" className='DiscountImg'/>}
+                </div>
                 <p className='FoodDescription'><strong>Description: </strong>{props.description}</p>
                 <p className='FoodIngredients'><strong>Ingredients: </strong>{props.ingredients}</p>
                 <p className ='TotalCount'>Total Number of Items = {props.totalItems}</p>
