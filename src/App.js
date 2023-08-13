@@ -101,8 +101,7 @@ export default function App() {
         <Navbar/>
          <Routes>
               <Route path='/About' element = {<Cart/>}/>
-        </Routes>
-        {item.map((item,index)=>(
+              <Route path='/Home' element = {item.map((item,index)=>(
         <>
           <FoodItems
                   name = {item.name}
@@ -121,7 +120,9 @@ export default function App() {
                   AddToCart = {item.isAddedToCart}
           />
        </>
-      ))}
+      ))} />
+        </Routes>
+        
     </>
   )
 }
