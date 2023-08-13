@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+body{
+  padding: 0px;
+  margin: 0px;
+  /*background-color: rgb(255, 221, 192);*/
+  /* background-image:url("./Images/Background4.jfif");
+  background-size:auto;
+  background-repeat:repeat; */
+  background-image:linear-gradient(to right,rgb(252, 252, 116),rgb(255, 116, 116));
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Navbar{
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  padding: 1vh 0vh;
+  box-shadow: 1px 3px 10px gray;
+  width: 100%;
+  background-color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Navbar_List{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  float: right;
+  margin : 0px 0vw 0px 0vw;
+  list-style: none;
+  font-size: 1.5vw;
+  width: 50%;
+}
+.Navbar_Logo{
+  position: absolute;
+  left: 5vw;
+  display: flex;
+  align-self: center;
+  color: green;
+  font-size: 1.5vw;
+}
+.Navbar i{
+  display: flex;
+  align-self: center;
+  margin-right: 1vw;
+  height: 3vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.FoodItem{
+  margin: 3vw 8vw;
+  display: flex;
+  border: solid 0.5px black;
+  padding: 2vw;
+  border-radius: 15%;
+  box-shadow: 0.5vh 0.5vh gray;
+  background-color: peachpuff;
+}
+
+.FoodItem .FoodInfo{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items:flex-start;
+  font-family: "Inter";
 }
+.FoodItem img{
+  width: 25%;
+  height: 40vh;
+  border-radius: 25%;
+}
+ .FoodItem .FoodName{
+  margin: 1vw 2vw;
+  font-family: "Inter";
+  font-size: 1.5vw;
+  color: blue;
+ }
 
-.App-link {
-  color: #61dafb;
-}
+ .FoodPrice{
+  margin:0vw 2vw 1vw 2vw;
+  font-family: "Inter";
+  font-size: 1.25vw;
+  color:red;
+ }
+ .FoodItem .FoodDescription, .TotalCount, .FoodIngredients, .TotalAmount{
+   display: block;
+   margin: 0px;
+   margin-left: 2vw;
+   font-family: "Inter";
+   font-size: 1.25vw;
+   color: black;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .FoodItem .FoodCount{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 8vh;
+  padding: 1vw;
+  margin: 1vw;
+  font-size: 1vw;
+ }
+ .FoodCount .QuantityButton{
+  margin: 1vw;
+  border-radius: 25%;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+ }
+ .FoodItem .FoodCount .CartButton{
+  margin: 1vw;
+  background-color: yellow;
+  border-radius: 10px;
+  font-size: 1vw;
+  text-align: center;
+  font-weight: 700;
+  height: 3vw;
+  width: 10vw;
+ }
+
+ .FoodCount i{
+    font-size: 1.5vw;
+    margin-right: 5px;
+ }
+
