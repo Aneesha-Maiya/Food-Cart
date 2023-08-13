@@ -8,7 +8,7 @@ import Spaghetti from './Images/Spaghetti.jpg';
 import HawaiianPizza from './Images/HawaiianPizza.jpg';
 import './App.css';
 import { useState,useEffect} from 'react'
-import {Route,Routes,Router} from 'react-router-dom';
+import {Route,Routes,BrowserRouter as Router} from 'react-router-dom';
 
 export default function App() {
   const foodItemsArray = [
@@ -99,6 +99,9 @@ export default function App() {
   return (
     <> 
         <Navbar/>
+         <Routes>
+              <Route path='/About' element = {<Cart/>}/>
+        </Routes>
         {item.map((item,index)=>(
         <>
           <FoodItems
@@ -119,9 +122,6 @@ export default function App() {
           />
        </>
       ))}
-       <Routes>
-              <Route path='/Home' element = {<Cart/>}/>
-        </Routes>
     </>
   )
 }
