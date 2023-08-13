@@ -100,7 +100,28 @@ export default function App() {
     <> 
         <Navbar/>
          <Routes>
-              <Route path='/About' element = {<Cart/>}/>
+              <Route path='/Cart' element = {
+                  <>
+                      <h1 className='CartTitle'>Welcome to cart section</h1>
+                      {item.map((item,index)=>(
+                      <Cart
+                          name = {item.name}
+                          price = {item.price}
+                          description = {item.description}
+                          image = {item.image}
+                          ingredients = {item.ingredients}
+                          itemcount = {item.quantity} 
+                          increment = {() => incrementCount(index)}
+                          decrement = {() => decrementCount(index)}
+                          totalItems = {totalItemCount}
+                          totalItemsCount = {()=> {calculateTotal()}}
+                          totalAmount = {totalAmount}
+                          totalAmountCount = {()=>{calculateTotalAmount()}}
+                          cart = {() => {checkCart(index)}}
+                          AddToCart = {item.isAddedToCart}
+                      />))}
+                  </>
+              }/>
               <Route path='/Home' element = {item.map((item,index)=>(
         <>
           <FoodItems
@@ -121,7 +142,7 @@ export default function App() {
           />
        </>
       ))} />
-        </Routes>
+  </Routes>
         
     </>
   )

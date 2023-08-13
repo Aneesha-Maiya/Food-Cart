@@ -8,7 +8,7 @@ export default function Navbar(){
             <h3 className='Navbar_Logo'><i class="fa fa-bolt"></i>Lorem Ipsum</h3>
             <ul className='Navbar_List'>
                 <li className='Navbar_Items'><Link to="/Home">Home</Link></li>
-                <li className='Navbar_Items'><Link to="/About">About</Link></li>
+                <li className='Navbar_Items'><Link to="/Cart">Cart</Link></li>
                 <li className='Navbar_Items'>Contacts</li>
                 <li className='Navbar_Items'>Services</li>
             </ul>
