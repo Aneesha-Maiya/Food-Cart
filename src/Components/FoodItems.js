@@ -17,7 +17,7 @@ export default function FoodItems(props) {
                 <p className='FoodDescription'><strong>Description: </strong>{props.description}</p>
                 <p className='FoodIngredients'><strong>Ingredients: </strong>{props.ingredients}</p>
                 <p className ='TotalCount'>Total Number of Items = {props.totalItems}</p>
-                <p className ='TotalAmount'>Grand Total Amount = ${props.totalAmount}</p>
+                <p className ='TotalAmount'>Grand Total Amount = ${Math.floor(props.totalAmount)}</p>
                 <div className='FoodCount'>
                   <button className = "QuantityButton" onClick={props.increment}><i class = "fa fa-plus"/></button>
                   <p>{props.itemcount}</p>

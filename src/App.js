@@ -8,6 +8,7 @@ import Spaghetti from './Images/Spaghetti.jpg';
 import HawaiianPizza from './Images/HawaiianPizza.jpg';
 import TenOff from './Images/TenOff.jpeg';
 import FiveOff from './Images/FiveOff.jpeg';
+import FoodItem1 from './Images/fooditem5.jpg';
 import './App.css';
 import { useState,useEffect} from 'react'
 import {Route,Routes,BrowserRouter as Router} from 'react-router-dom';
@@ -35,6 +36,7 @@ export default function App() {
       image: Salmon,
       ingredients: "Salmon,Teriyaki sauce and Vegetables like peppers, carrots and green beans.",
       isAddedToCart: false,
+      discountPercentage: 0.00,
     },
     {
       id: 3,
@@ -57,6 +59,7 @@ export default function App() {
       image: HawaiianPizza,
       ingredients: "Pizza dough,Chicken breasts,Olive oil,Barbecue sauce,Bacon,Mozzarella,Fresh pineapple,Red onion,Cilantro,Garlic and Black pepper",
       isAddedToCart: false,
+      discountPercentage: 0.00,
     },
   ];
   const [item,setItem] = useState(foodItemsArray);
@@ -98,7 +101,7 @@ export default function App() {
   const calculateTotalAmount = ()=>{
     var totalAmount = 0
     item.map((items)=>{
-      return totalAmount = totalAmount + (items.quantity)*(items.price)
+      return totalAmount = totalAmount + (items.quantity)*(items.price)*(1-items.discountPercentage)
     })
     setTotalAmount(totalAmount)
   }
@@ -153,7 +156,13 @@ export default function App() {
        </>
       ))} />
   </Routes>
-        
+      <div className='MainContent'>
+        <h1 className='Hero-Text'>Enjoy Our Delicious Meal</h1>
+        <p className='Sub-Hero-Text'>Find all your recipes, tried and tested for you in our test
+        kitchen.Keep it easy with these simple but delicious recipes from make-ahead lunches to 
+        midweek meals</p>
+        <img src={FoodItem1} alt='' className='Main-Img'/>
+      </div>  
     </>
   )
 }
