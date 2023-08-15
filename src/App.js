@@ -13,6 +13,7 @@ import './App.css';
 import { useState,useEffect} from 'react'
 import {Route,Routes,BrowserRouter as Router} from 'react-router-dom';
 import Landing from './Components/Landing';
+import Bill from './Components/Bill';
 
 export default function App() {
   const foodItemsArray = [
@@ -106,6 +107,8 @@ export default function App() {
     })
     setTotalAmount(totalAmount)
   }
+  const mapItem = () => {
+  }
   return (
     <> 
         <Navbar/>
@@ -157,6 +160,16 @@ export default function App() {
        </>
       ))} />
       <Route path='/' element ={<Landing/>}/>
+      <Route path='/Bill' 
+      element = {
+        <>
+        <h1>Bill Info</h1>
+        <p>Bill items</p>
+        <Bill
+          itemstate = {item}
+        />
+        </>
+      }/>
   </Routes>
     </>
   )

@@ -9,7 +9,7 @@ export default function Navbar(){
             <ul className='Navbar_List'>
                 <li className='Navbar_Items'><Link to="/Item">Item</Link></li>
                 <li className='Navbar_Items'><Link to="/Cart">Cart</Link></li>
-                <li className='Navbar_Items'>Contacts</li>
+                <li className='Navbar_Items'><Link to="/Bill">Bill</Link></li>
                 <li className='Navbar_Items'>Services</li>
             </ul>
             

@@ -183,3 +183,18 @@ body{
   border: none;
   border-radius: 1vw;
 }
+
+.Bill-Heading{
+  text-align: center;
+}
+
+.Bill-Content table{
+    border:solid 1px black;
+    border-collapse:collapse;
+    margin: 1vw;
+}
+
+.Bill-Content th,td{
+  border:solid 1px black;
+  padding: 3px;
+}
