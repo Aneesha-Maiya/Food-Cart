@@ -12,6 +12,7 @@ import FoodItem1 from './Images/fooditem5.jpg';
 import './App.css';
 import { useState,useEffect} from 'react'
 import {Route,Routes,BrowserRouter as Router} from 'react-router-dom';
+import Landing from './Components/Landing';
 
 export default function App() {
   const foodItemsArray = [
@@ -133,7 +134,7 @@ export default function App() {
                       />))}
                   </>
               }/>
-              <Route path='/Home' element = {item.map((item,index)=>(
+              <Route path='/Item' element = {item.map((item,index)=>(
         <>
           <FoodItems
                   name = {item.name}
@@ -155,14 +156,8 @@ export default function App() {
           />
        </>
       ))} />
+      <Route path='/' element ={<Landing/>}/>
   </Routes>
-      <div className='MainContent'>
-        <h1 className='Hero-Text'>Enjoy Our Delicious Meal</h1>
-        <p className='Sub-Hero-Text'>Find all your recipes, tried and tested for you in our test
-        kitchen.Keep it easy with these simple but delicious recipes from make-ahead lunches to 
-        midweek meals</p>
-        <img src={FoodItem1} alt='' className='Main-Img'/>
-      </div>  
     </>
   )
 }

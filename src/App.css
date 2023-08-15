@@ -135,8 +135,51 @@ body{
 }
 
 .Main-Img{
+  position: absolute;
+  top: 10vw;
+  left: 55vw;
+  bottom: 10vw;
   width: 40%;
-  height: 40%;
-  border-radius: 60%;
-  background-image:linear-gradient(to right,rgb(252, 252, 116),rgb(255, 116, 116));
+  /* height: 70%; */
+  border-radius: 50%;
+  padding: 1vw;
+  /*background-image:linear-gradient(to right,rgb(252, 252, 116),rgb(255, 116, 116));*/
+}
+
+.MainContent{
+  display: flex;
+  margin: 10vw 0vw 5vw 5vw;
+  padding: 1vw;
+  flex-direction: column;
+  width: 45%;
+}
+
+.MainContent .Hero-Text{
+  font-family: "Inter";
+  font-size: 5vw;
+  margin-bottom: 0px;
+  color:blue;
+  text-shadow: 3px 3px black;
+}
+
+.MainContent .Sub-Hero-Text{
+  font-family: "Inter";
+  font-size: 1.75vw;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  color:red;
+}
+
+.MainContent button{
+  font-family: "Inter";
+  width: 40%;
+  margin: 1vw 0vw;
+  padding: 0.6vw;
+  font-size:1.5vw;
+  font-weight: 500;
+  color:yellow;
+  background-color: dodgerblue;
+  box-shadow: 2px 2px black;
+  border: none;
+  border-radius: 1vw;
 }
