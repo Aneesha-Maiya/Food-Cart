@@ -5,30 +5,30 @@ export default function Bill(props) {
   return (
     <>
         <div className="Bill-Content">
-            {
-                item.map((items,index)=>{
-                    return(
-                        <center>
-                            <table>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Discount</th>
-                                    <th>Price</th>
-                                    <th>Discount Amount</th>
-                                </tr>
+            <center>
+                <table>
+                    <tr>
+                        <th>Names</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                        <th>Price</th>
+                        <th>Discount Amount</th>                   
+                    </tr>            
+                    {
+                        item.map((items,index)=>{
+                        return(
                                 <tr>
                                     <td>{items.name}</td>
                                     <td>{items.quantity}</td>
-                                    <td>{items.discountPercentage}</td>
-                                    <td>{items.price}</td>
-                                    <td>{items.discountPercentage*items.price*items.quantity}</td>
+                                    <td>{items.discountPercentage*100 + "%"}</td>
+                                    <td>{"$"+items.price}</td>
+                                    <td>{"$"+Math.floor(items.discountPercentage*items.price*items.quantity)}</td>
                                 </tr>
-                            </table>
-                        </center>
-                    )
-                })
-            }
+                            )
+                        })
+                    }
+                </table>
+            </center>
         </div>
     </>
   )
