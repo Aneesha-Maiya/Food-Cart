@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Food-Cart/static/css/main.d5d35043.css",
-    "main.js": "/Food-Cart/static/js/main.ca74b46b.js",
+    "main.js": "/Food-Cart/static/js/main.57056422.js",
     "static/media/HawaiianPizza.jpg": "/Food-Cart/static/media/HawaiianPizza.8b90e5ba3bdff306565a.jpg",
     "static/media/SpringRoll.jpg": "/Food-Cart/static/media/SpringRoll.84630ffda79a436739cd.jpg",
     "static/media/Salmon.jpg": "/Food-Cart/static/media/Salmon.f32122dae73e8f3969c8.jpg",
@@ -11,10 +11,10 @@
     "static/media/TenOff.jpeg": "/Food-Cart/static/media/TenOff.f7eea213d2e9434493c4.jpeg",
     "index.html": "/Food-Cart/index.html",
     "main.d5d35043.css.map": "/Food-Cart/static/css/main.d5d35043.css.map",
-    "main.ca74b46b.js.map": "/Food-Cart/static/js/main.ca74b46b.js.map"
+    "main.57056422.js.map": "/Food-Cart/static/js/main.57056422.js.map"
   },
   "entrypoints": [
     "static/css/main.d5d35043.css",
-    "static/js/main.ca74b46b.js"
+    "static/js/main.57056422.js"
   ]
 }
