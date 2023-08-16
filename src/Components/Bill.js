@@ -27,6 +27,11 @@ export default function Bill(props) {
                             )
                         })
                     }
+                    <tr>
+                        <td colSpan="3">Total:</td>
+                        <td>{props.totalBillAmount}</td>
+                        <td></td>
+                    </tr>
                 </table>
             </center>
         </div>

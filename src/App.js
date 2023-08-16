@@ -167,6 +167,7 @@ export default function App() {
         <p>Bill items</p>
         <Bill
           itemstate = {item}
+          totalBillAmount = {totalAmount}
         />
         </>
       }/>
