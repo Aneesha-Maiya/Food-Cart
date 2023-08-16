@@ -8,10 +8,9 @@ import Spaghetti from './Images/Spaghetti.jpg';
 import HawaiianPizza from './Images/HawaiianPizza.jpg';
 import TenOff from './Images/TenOff.jpeg';
 import FiveOff from './Images/FiveOff.jpeg';
-import FoodItem1 from './Images/fooditem5.jpg';
 import './App.css';
 import { useState,useEffect} from 'react'
-import {Route,Routes,BrowserRouter as Router} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 import Landing from './Components/Landing';
 import Bill from './Components/Bill';
 
@@ -67,6 +66,8 @@ export default function App() {
   const [item,setItem] = useState(foodItemsArray);
   const [totalItemCount,setTotalItemCount] =useState(8);
   const [totalAmount,setTotalAmount] = useState(223.45);
+  const [totalCartAmt,setTotalCartAmt] = useState(0);
+  const [totalDiscountAmt,setTotalDiscountAmt] = useState(0);
   useEffect(() => {
 
   },[item]);
@@ -94,8 +95,11 @@ export default function App() {
   const checkCart = (itemindex) =>{
     const newItems = [...item]
     newItems[itemindex].isAddedToCart = !newItems[itemindex].isAddedToCart
-    if(newItems[itemindex].isAddedToCart)
-    alert("Items Successfully Added to cart")
+    if(newItems[itemindex].isAddedToCart){
+      alert("Items Successfully Added to cart");
+      cartItemAmount();
+      DiscountAmount();
+    }
     else
     alert("Items Successfully removed from cart")
     setItem(newItems)
@@ -107,7 +111,27 @@ export default function App() {
     })
     setTotalAmount(totalAmount)
   }
-  const mapItem = () => {
+  const cartItemAmount = () =>{
+    var totalCartAmount = 0;
+    item.map((items)=>{
+      if(items.isAddedToCart){
+        return totalCartAmount = totalCartAmount + (items.quantity)*(items.price)*(1-items.discountPercentage);
+      }
+      else
+      return totalCartAmount
+    })
+    setTotalCartAmt(totalCartAmount)
+  }
+  const DiscountAmount = () =>{
+    var totalDiscountAmount = 0;
+    item.map((items)=>{
+      if(items.isAddedToCart && items.discountPercentage>0.0){
+        return totalDiscountAmount = totalDiscountAmount + (items.quantity)*(items.price)*(items.discountPercentage);
+      }
+      else
+      return totalDiscountAmount
+    })
+    setTotalDiscountAmt(totalDiscountAmount)
   }
   return (
     <> 
@@ -159,6 +183,7 @@ export default function App() {
           />
        </>
       ))} />
+      <Route path='/Food-Cart' element ={<Landing/>}/>
       <Route path='/' element ={<Landing/>}/>
       <Route path='/Bill' 
       element = {
@@ -167,7 +192,8 @@ export default function App() {
         <p>Bill items</p>
         <Bill
           itemstate = {item}
-          totalBillAmount = {totalAmount}
+          totalCartAmount = {totalCartAmt}
+          totalDiscountAmount = {totalDiscountAmt}
         />
         </>
       }/>

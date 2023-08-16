@@ -198,3 +198,17 @@ body{
   border:solid 1px black;
   padding: 0.5vw;
 }
+
+#GrandTotal{
+  text-align: right;
+}
+
+.Bill-Date-Time{
+  text-align: left;
+  margin-left: 2vw;
+}
+
+.Bill-Area{
+  border: solid 1px black;
+  width: 50%
+}
